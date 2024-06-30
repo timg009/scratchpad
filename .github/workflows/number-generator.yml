@@ -16,7 +16,7 @@ jobs:
         run: echo "number=$(echo $RANDOM)" >> "$GITHUB_OUTPUT"
       - id: is-even
         run: |
-          echo "is-even=$(${{steps.generate-number.outputs.number}} % 2 )" >> "$GITHUB_OUTPUT"
+          echo "is-even=$((${{steps.generate-number.outputs.number}} % 2 ))" >> "$GITHUB_OUTPUT"
           echo "The number is ${{steps.generate-number.outputs.number}}" >> "$GITHUB_STEP_SUMMARY"
   consumer-of-generator-odd:
     needs: random-number-generator
