@@ -13,7 +13,7 @@ jobs:
       is-even: ${{ steps.generate-number.outputs.is-even }}
     steps:
       - id: generate-number
-        run: echo "number=${echo $RANDOM}" >> "$GITHUB_OUTPUT"
+        run: echo "number=$(echo $RANDOM)" >> "$GITHUB_OUTPUT"
       - id: is-even
         run: |
           echo "is-even=$(${{steps.generate-number.outputs.number}} % 2 == 0)" >> "$GITHUB_OUTPUT"
