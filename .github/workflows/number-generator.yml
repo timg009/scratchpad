@@ -7,7 +7,7 @@ run-name: Cache, artefact and download test by ${{ github.actor }}
 
 jobs:
   random-number-generator:
-    runs-on: ubunut-latest
+    runs-on: ubuntu-latest
     outputs:
       number: ${{ steps.generate-number.outputs.number }}
       is-even: ${{ steps.generate-number.outputs.is-even }}
