@@ -21,7 +21,7 @@ jobs:
   consumer-of-generator-odd:
     needs: random-number-generator
     runs-on: ubuntu-latest
-    if: ${{ ! needs.random-number-generator.outputs.is-even }}
+    if: needs.random-number-generator.outputs.is-even
     steps:
       - run: echo "The number is ${{ needs.random-number-generator.outputs.number }} is odd"
       
